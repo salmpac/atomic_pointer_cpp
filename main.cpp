@@ -33,6 +33,9 @@ public:
         for (uint32_t i = 0; i < tickets; ++i) {
             slots[i] = i + 1;
         }
+        for (uint32_t i = tickets; i < slots.size(); ++i) {
+            slots[i].store(0);
+        }
     }
 
     uint32_t try_give_ticket() {
